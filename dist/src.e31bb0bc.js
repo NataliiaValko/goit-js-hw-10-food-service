@@ -2455,7 +2455,7 @@ var Theme = {
   LIGHT: 'light-theme',
   DARK: 'dark-theme'
 };
-localStorage.getItem('THEME') === Theme.DARK ? (_refs.default.bodyRef.classList.add(Theme.DARK), _refs.default.checkBoxRef.checked = true) : _refs.default.bodyRef.classList.add(Theme.LIGHT);
+localStorage.getItem('THEME') === Theme.DARK ? (_refs.default.bodyRef.classList.add(Theme.DARK), _refs.default.checkBoxRef.checked = true) : (_refs.default.bodyRef.classList.add(Theme.LIGHT), localStorage.setItem('THEME', Theme.LIGHT));
 
 var onDarkTheme = function onDarkTheme() {
   _refs.default.bodyRef.classList.replace(Theme.LIGHT, Theme.DARK);
@@ -2510,7 +2510,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "55590" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50346" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
