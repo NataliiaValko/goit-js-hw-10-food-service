@@ -19,7 +19,7 @@
   "bugs": {
     "url": "https://github.com/NataliiaValko/goit-js-hw-10-food-service/issues"
   },
-  "homepage": "https://github.com/NataliiaValko/goit-js-hw-10-food-service#index.html",
+  "homepage": "https://NataliiaValko.github.io/goit-js-hw-10-food-service",
   "devDependencies": {
     "gh-pages": "^3.1.0",
     "parcel-bundler": "^1.12.5",

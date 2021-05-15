@@ -202,37 +202,7 @@ var _default = {
   checkBoxRef: document.querySelector('#theme-switch-toggle')
 };
 exports.default = _default;
-},{}],"js/theme.js":[function(require,module,exports) {
-"use strict";
-
-var _refs = _interopRequireDefault(require("./refs.js"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Theme = {
-  LIGHT: 'light-theme',
-  DARK: 'dark-theme'
-};
-localStorage.getItem('THEME') === Theme.DARK ? (_refs.default.bodyRef.classList.add(Theme.DARK), _refs.default.checkBoxRef.checked = true) : _refs.default.bodyRef.classList.add(Theme.LIGHT);
-
-var onDarkTheme = function onDarkTheme() {
-  _refs.default.bodyRef.classList.replace(Theme.LIGHT, Theme.DARK);
-
-  localStorage.setItem('THEME', Theme.DARK);
-};
-
-var onLightTheme = function onLightTheme() {
-  _refs.default.bodyRef.classList.replace(Theme.DARK, Theme.LIGHT);
-
-  localStorage.setItem('THEME', Theme.LIGHT);
-};
-
-var onInputChange = function onInputChange() {
-  _refs.default.bodyRef.classList.contains(Theme.LIGHT) ? onDarkTheme() : onLightTheme();
-};
-
-_refs.default.checkBoxRef.addEventListener('change', onInputChange);
-},{"./refs.js":"js/refs.js"}],"js/menu.json":[function(require,module,exports) {
+},{}],"js/menu.json":[function(require,module,exports) {
 module.exports = [{
   "id": "XWaQXcbk0",
   "name": "Картофель, запеченный в мундире",
@@ -2474,15 +2444,45 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var markupMenu = (0, _menuItems.default)(_menu.default);
 
 _refs.default.menuRef.insertAdjacentHTML('beforeend', markupMenu);
-},{"./refs":"js/refs.js","./menu.json":"js/menu.json","../templates/menu-items.hbs":"templates/menu-items.hbs"}],"index.js":[function(require,module,exports) {
+},{"./refs":"js/refs.js","./menu.json":"js/menu.json","../templates/menu-items.hbs":"templates/menu-items.hbs"}],"js/theme.js":[function(require,module,exports) {
+"use strict";
+
+var _refs = _interopRequireDefault(require("./refs.js"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Theme = {
+  LIGHT: 'light-theme',
+  DARK: 'dark-theme'
+};
+localStorage.getItem('THEME') === Theme.DARK ? (_refs.default.bodyRef.classList.add(Theme.DARK), _refs.default.checkBoxRef.checked = true) : _refs.default.bodyRef.classList.add(Theme.LIGHT);
+
+var onDarkTheme = function onDarkTheme() {
+  _refs.default.bodyRef.classList.replace(Theme.LIGHT, Theme.DARK);
+
+  localStorage.setItem('THEME', Theme.DARK);
+};
+
+var onLightTheme = function onLightTheme() {
+  _refs.default.bodyRef.classList.replace(Theme.DARK, Theme.LIGHT);
+
+  localStorage.setItem('THEME', Theme.LIGHT);
+};
+
+var onInputChange = function onInputChange() {
+  _refs.default.bodyRef.classList.contains(Theme.LIGHT) ? onDarkTheme() : onLightTheme();
+};
+
+_refs.default.checkBoxRef.addEventListener('change', onInputChange);
+},{"./refs.js":"js/refs.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 require("./styles.css");
 
-require("./js/theme.js");
-
 require("./js/markup-menu.js");
-},{"./styles.css":"styles.css","./js/theme.js":"js/theme.js","./js/markup-menu.js":"js/markup-menu.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+
+require("./js/theme.js");
+},{"./styles.css":"styles.css","./js/markup-menu.js":"js/markup-menu.js","./js/theme.js":"js/theme.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -2510,7 +2510,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53042" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "54000" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
