@@ -8,8 +8,7 @@ const Theme = {
 localStorage.getItem('THEME') === Theme.DARK
   ? (refs.bodyRef.classList.add(Theme.DARK),
     refs.checkBoxRef.checked = true)
-  : (refs.bodyRef.classList.add(Theme.LIGHT),
-  localStorage.setItem('THEME', Theme.LIGHT));
+  : (refs.bodyRef.classList.add(Theme.LIGHT));
 
 const onDarkTheme = () => {
   refs.bodyRef.classList.replace(Theme.LIGHT, Theme.DARK);
@@ -22,7 +21,7 @@ const onLightTheme = () => {
 }
 
 const onInputChange = () => {
-  refs.bodyRef.classList.contains(Theme.LIGHT)
+  refs.checkBoxRef.checked
     ? onDarkTheme()
     : onLightTheme()
 }
